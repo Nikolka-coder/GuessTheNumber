@@ -1,0 +1,25 @@
+<div class="class conteiner">
+    <table class="table table-dark table-condensed table-hover">
+        <thead>
+            <tr>
+                <th scope="col">GameId</th>
+                <th scope="col">Secret Number</th>
+                <th scope="col">Date Time</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Winner</th>
+                <th scope="col">List of players</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of games"[ngClass]="{'highlighted': currentUser === i.gameWinnerName}">
+                <td>{{i?.gameId}}</td>
+                <td>{{i?.secretValue}}</td>
+                <td>{{i?.gameDate | date:'short'}}</td>
+                <td>{{i?.gameOwnerName}}</td>
+                <td>{{i?.gameWinnerName}}</td>
+                <td> <ul> <li *ngFor = "let a of i?.listOfAttempts" [ngClass]="{'highlightedPlayer': currentUser === a.userName}">{{a?.userName}}</li></ul></td>
+                <!-- <td>{{a?.userName}}</td> -->
+            </tr>
+        </tbody>
+    </table> 
+</div>

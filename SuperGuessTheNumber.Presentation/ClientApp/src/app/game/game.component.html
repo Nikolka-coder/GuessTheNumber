@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Please enter the number to start the game</h1>
+    <div class="p-2 flex-fill bd-highlight"><input type="text" placeholder="value" [(ngModel)]="value"></div>
+<div><button type="button" class="btn btn-secondary btn-lg btn-block" (click)="StartGame()">Start New Game</button></div>
+<div><button type="button" class="btn btn-dark btn-lg btn-block" (click)="CheckValue()">Guess</button></div>
+<div><button type="button" class="btn btn-secondary btn-lg btn-block" (click)="FinishGame()">Finish</button></div>
+<div><button type="button" class="btn btn-link" (click)="onHistoryOfCurrentGame(game)">History of current game</button></div>
+<div><button type="button" class="btn btn-link" (click)="onAllGames(game)">All Games</button></div>
+</div>
